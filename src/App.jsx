@@ -15,7 +15,6 @@ import NotFound from "./pages/NotFound.jsx";
 export default function App() {
   return (
     <>
-      <a className="skip" href="#main">Skip to content</a>
       <Navbar />
 
       <Routes>
