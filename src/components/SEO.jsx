@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+
 import site from "../data/site.js";
 
 export default function SEO({
@@ -9,7 +9,7 @@ export default function SEO({
   jsonLd
 }) {
   const baseUrl = site.url.replace(/\/$/, "");
-  const canonical = baseUrl + path;
+  const canonical = `${baseUrl}${path}`;
 
   const schema = jsonLd || {
     "@context": "https://schema.org",
@@ -25,7 +25,7 @@ export default function SEO({
   };
 
   return (
-    <Helmet>
+    <>
       <title>{title}</title>
 
       <meta name="description" content={description} />
@@ -52,6 +52,6 @@ export default function SEO({
       <script type="application/ld+json">
         {JSON.stringify(schema)}
       </script>
-    </Helmet>
+    </>
   );
 }
