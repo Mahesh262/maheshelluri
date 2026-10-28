@@ -1,7 +1,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 
-const siteUrl = "https://yourdomain.com";
+const siteUrl = "https://maheshelluri-one.vercel.app/";
 
 const routes = ["/", "/about", "/projects", "/skills", "/services", "/contact"];
 
