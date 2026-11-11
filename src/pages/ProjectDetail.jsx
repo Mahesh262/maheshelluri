@@ -1,3 +1,4 @@
+
 import { useParams, Link } from "react-router-dom";
 import SEO from "../components/SEO.jsx";
 import Breadcrumbs from "../components/Breadcrumbs.jsx";
@@ -23,8 +24,8 @@ export default function ProjectDetail() {
     url: site.url.replace(/\/$/, "") + path,
     creator: {
       "@type": "Person",
-      name: site.name
-    }
+      name: site.name,
+    },
   };
 
   return (
@@ -42,7 +43,7 @@ export default function ProjectDetail() {
           items={[
             { label: "Home", to: "/" },
             { label: "Projects", to: "/projects" },
-            { label: project.title }
+            { label: project.title },
           ]}
         />
 
@@ -51,7 +52,7 @@ export default function ProjectDetail() {
         <p className="lead">{project.summary}</p>
 
         <section className="prose">
-          <h2>Scope of work</h2>
+          <h2>Scope of Work</h2>
 
           <ul>
             {project.work.map((item) => (
@@ -59,12 +60,30 @@ export default function ProjectDetail() {
             ))}
           </ul>
 
-          <h2>Outcome</h2>
-          <p>{project.result}</p>
+          <h2>{project.result?.heading || "Key Outcomes"}</h2>
+
+          {project.result?.metrics?.length > 0 && (
+            <div className="result-metrics">
+              {project.result.metrics.map((metric, index) => (
+                <div className="result-metric" key={index}>
+                  <h3>{metric.value}</h3>
+                  <p>{metric.label}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {project.result?.achievements?.length > 0 && (
+            <ul>
+              {project.result.achievements.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          )}
 
           <p className="notice">
-            Replace this sample copy with accurate work, evidence and
-            verified results. Do not claim unverified ranking or traffic growth.
+            Results should reflect verified work and evidence.
+            No unverified ranking or traffic improvements are claimed.
           </p>
         </section>
 

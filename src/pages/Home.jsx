@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <>
       <SEO
-        title={`${site.name} | SEO Executive Portfolio`}
+        title={`${site.name} | SEO Specialist Portfolio & Organic Growth`}
         path="/"
         description="Explore my SEO portfolio, technical SEO audits, keyword research, local SEO projects and digital marketing skills."
         jsonLd={schema}
@@ -65,18 +65,18 @@ export default function Home() {
                 SEO EXECUTIVE <span>•</span> DIGITAL MARKETING
               </p>
 
-              <h1>
-                Growing search
-                <br />
-                visibility with
-                <br />
-                <span className="gradient-text">practical SEO</span>
-              </h1>
+            <h1>
+  Smarter SEO.
+  <br />
+  <span className="gradient-text">Stronger Growth.</span>
+</h1>
 
               <p className="lead">
-                I work on technical SEO, keyword research, on-page optimization,
-                local SEO and content strategy to improve organic search visibility.
-              </p>
+  I'm Mahesh Elluri, an SEO professional with 2.5+
+  years of experience in improving website visibility
+  through technical SEO, keyword research, content
+  optimization, on-page SEO and organic growth strategies.
+</p>
 
               <div className="actions">
                 <Link className="button button-primary" to="/projects">

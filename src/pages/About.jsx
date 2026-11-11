@@ -40,7 +40,7 @@ export default function About() {
       <SEO
         title={`About ${site.name} | SEO Experience`}
         path="/about"
-        description="Learn about my SEO experience, technical SEO skills, keyword research, local SEO and digital marketing approach."
+        description="Learn about Mahesh Elluri, an SEO Specialist with 2.5+ years of digital marketing experience in technical SEO, keyword research, content optimization, on-page SEO, link building, and organic growth strategies."
         jsonLd={schema}
       />
 
@@ -62,15 +62,17 @@ export default function About() {
                 </p>
 
                 <h1>
-                  Making search work better with{" "}
-                  <span className="gradient-text">practical SEO.</span>
-                </h1>
-
+  Mahesh Elluri –{" "}
+  <span className="gradient-text">
+    SEO Specialist & Digital Marketer
+  </span>
+</h1>
                 <p className="lead">
-                  I am an SEO Executive focused on helping websites become
-                  easier to discover, understand and navigate through
-                  user-focused optimization and data-informed decisions.
-                </p>
+  I am Mahesh Elluri, an SEO Specialist with 2.5+ years of
+  digital marketing experience, specializing in technical SEO,
+  keyword research, on-page optimization, content strategy
+  and organic search growth.
+</p>
 
                 <div className="actions">
                   <ResumeButton />

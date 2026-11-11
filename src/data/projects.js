@@ -4,40 +4,69 @@ const projects = [
     title: "Technical SEO Audit",
     category: "Technical SEO",
     summary:
-      "Audit workflow covering crawlability, indexing, metadata, internal links and sitemap checks.",
+      "Technical SEO analysis covering crawlability, indexing, metadata, internal linking and sitemap health.",
     work: [
-      "Reviewed indexability signals",
+      "Reviewed indexability and crawlability signals",
       "Checked page titles and meta descriptions",
-      "Reviewed internal linking",
-      "Prioritized technical fixes",
+      "Analyzed internal linking structure",
+      "Identified technical SEO improvement opportunities",
     ],
-    result: "Add your verified findings and results here.",
+    result: {
+      type: "qualitative",
+      heading: "Key Outcomes",
+      metrics: [],
+      achievements: [
+        "Identified technical SEO issues",
+        "Prepared a prioritized SEO action plan",
+        "Documented improvements for crawlability and indexing",
+      ],
+    },
   },
   {
     slug: "local-seo",
     title: "Local SEO Optimization",
     category: "Local SEO",
     summary:
-      "Local SEO workflow covering business profiles, local intent and landing pages.",
+      "Local SEO analysis covering business profiles, local search intent and location-based landing pages.",
     work: [
-      "Reviewed business profile completeness",
+      "Reviewed Google Business Profile completeness",
       "Mapped local search intent",
-      "Identified landing page opportunities",
+      "Analyzed location-based keyword opportunities",
+      "Identified landing page improvements",
     ],
-    result: "Add your verified local SEO results here.",
+    result: {
+      type: "qualitative",
+      heading: "Key Outcomes",
+      metrics: [],
+      achievements: [
+        "Identified local search visibility gaps",
+        "Created location-specific keyword opportunities",
+        "Developed a local SEO optimization roadmap",
+      ],
+    },
   },
   {
     slug: "keyword-content-strategy",
     title: "Keyword and Content Strategy",
     category: "Content SEO",
     summary:
-      "Keyword mapping, search intent analysis, content gaps and internal linking.",
+      "Keyword mapping, search intent analysis, competitor content gaps and internal linking strategy.",
     work: [
       "Grouped keywords by search intent",
-      "Mapped queries to relevant pages",
+      "Mapped search queries to relevant pages",
+      "Analyzed competitor content opportunities",
       "Created content priorities",
     ],
-    result: "Add verified content and organic search results here.",
+    result: {
+      type: "qualitative",
+      heading: "Key Outcomes",
+      metrics: [],
+      achievements: [
+        "Created a structured keyword-to-page mapping",
+        "Identified competitor content gaps",
+        "Prepared a prioritized content roadmap",
+      ],
+    },
   },
 ];
 

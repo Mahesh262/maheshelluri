@@ -7,7 +7,7 @@ export default function Skills() {
   return (
     <>
       <SEO
-        title="SEO Skills and Tools | Your Name"
+        title="SEO Skills and Tools | Elluri Mahesh"
         path="/skills"
         description="Explore SEO skills including technical audits, keyword research, on-page SEO, local SEO, GA4 and Search Console."
       />
@@ -49,10 +49,6 @@ export default function Skills() {
               <span key={tool}>{tool}</span>
             ))}
           </div>
-
-          <p className="muted">
-            Only list tools you have actually used and can discuss confidently.
-          </p>
         </section>
       </main>
     </>
