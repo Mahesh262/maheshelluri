@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 
@@ -11,11 +10,13 @@ import Skills from "./pages/Skills.jsx";
 import Services from "./pages/Services.jsx";
 import Contact from "./pages/Contact.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import MobileExperience from "./mobile/MobileExperience.jsx";
+import "./mobile/bruno-mobile.css";
 
-export default function App() {
+function DesktopSite() {
   return (
-    <>
-      <Navbar />
+    <div className="desktop-site">
+       <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -29,6 +30,15 @@ export default function App() {
       </Routes>
 
       <Footer />
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <>
+      <DesktopSite />
+      <MobileExperience />
     </>
   );
 }

@@ -7,7 +7,7 @@ export default function Projects() {
   return (
     <>
       <SEO
-        title="SEO Projects and Case Studies | Your Name"
+        title="SEO Projects and Case Studies | Elluri Mahesh"
         path="/projects"
         description="Explore SEO project examples covering technical audits, local SEO, keyword research and content optimization."
         jsonLd={{
