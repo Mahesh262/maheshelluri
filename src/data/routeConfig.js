@@ -4,7 +4,7 @@ import Projects from "../pages/Projects.jsx";
 import Skills from "../pages/Skills.jsx";
 import Services from "../pages/Services.jsx";
 import Contact from "../pages/Contact.jsx";
-import ThankYou from "../pages/Thankyou.jsx";
+import ThankYou from "../pages/ThankYou.jsx";
 
 export const pageRoutes = [
   { path: "/", component: Home },
