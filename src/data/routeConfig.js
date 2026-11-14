@@ -4,6 +4,7 @@ import Projects from "../pages/Projects.jsx";
 import Skills from "../pages/Skills.jsx";
 import Services from "../pages/Services.jsx";
 import Contact from "../pages/Contact.jsx";
+import ThankYou from "../pages/Thankyou.jsx";
 
 export const pageRoutes = [
   { path: "/", component: Home },
@@ -12,6 +13,7 @@ export const pageRoutes = [
   { path: "/skills", component: Skills },
   { path: "/services", component: Services },
   { path: "/contact", component: Contact },
+  { path: "/Thankyou", component: ThankYou },
 ];
 
 export const staticRoutes = pageRoutes.map((route) => route.path);

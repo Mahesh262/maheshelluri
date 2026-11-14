@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import {
   Link,
@@ -9,7 +8,10 @@ import {
 
 import site from "../data/site.js";
 import projects from "../data/projects.js";
+import MasterLanding from "../pages/MasterLanding.jsx";
 import ResumeButton from "../components/ResumeButton.jsx";
+import ContactForm from "../components/ContactForm.jsx"; //[cite: 2]
+import ThankYou from "../pages/ThankYou.jsx"; // Uses your existing Thank You page
 
 const navigation = [
   ["/", "Home"],
@@ -411,14 +413,14 @@ function ContactMobile() {
       />
 
       <section className="bm-section">
+        {/* Render interactive ContactForm for mobile users */}
+        <div style={{ marginBottom: "2rem" }}>
+          <ContactForm />
+        </div>
+
         <div className="bm-contact-card">
           <span className="bm-label">EMAIL</span>
           <h3>{site.email || "Contact me by email"}</h3>
-          {site.email && (
-            <a href={`mailto:${site.email}`} className="bm-btn bm-btn-primary">
-              Send an Email ↗
-            </a>
-          )}
         </div>
 
         <div className="bm-contact-card">
@@ -426,20 +428,6 @@ function ContactMobile() {
           <h3>Hyderabad, India</h3>
           <p>Open to suitable opportunities and collaborations.</p>
         </div>
-
-        {site.linkedin && (
-          <div className="bm-contact-card">
-            <span className="bm-label">LINKEDIN</span>
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="bm-text-link"
-            >
-              Connect on LinkedIn ↗
-            </a>
-          </div>
-        )}
       </section>
     </main>
   );
@@ -486,8 +474,12 @@ export default function MobileExperience() {
   else if (pathname === "/projects") page = <ProjectsMobile />;
   else if (pathname.startsWith("/projects/")) page = <ProjectDetailMobile />;
   else if (pathname === "/skills") page = <SkillsMobile />;
+  else if (pathname === "/digital-marketing-services") {
+    page = <MasterLanding theme={theme} />;
+  }
   else if (pathname === "/services") page = <ServicesMobile />;
   else if (pathname === "/contact") page = <ContactMobile />;
+  else if (pathname === "/thank-you") page = <ThankYou />; // Connects to your existing Thank You page file
   else page = <NotFoundMobile />;
 
   return (
