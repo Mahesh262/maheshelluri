@@ -5,7 +5,7 @@ import Footer from "./components/Footer.jsx";
 import ProjectDetail from "./pages/ProjectDetail.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import MobileExperience from "./mobile/MobileExperience.jsx";
-import ThankYou from "./pages/Thankyou.jsx";
+import ThankYou from "./pages/ThankYou.jsx";
 import MasterLanding from "./pages/MasterLanding.jsx"; // Imported your master ad landing page
 import { pageRoutes } from "./data/routeConfig.js";
 
