@@ -5,7 +5,7 @@ import projects from "../data/projects.js";
 
 export default function Projects() {
   return (
-    <>
+    <div className="cinema-home">
       <SEO
         title="SEO Projects and Case Studies | Elluri Mahesh"
         path="/projects"
@@ -17,28 +17,50 @@ export default function Projects() {
         }}
       />
 
-      <main id="main" className="container page">
-        <Breadcrumbs
-          items={[
-            { label: "Home", to: "/" },
-            { label: "Projects" }
-          ]}
-        />
+      <main id="main" className="ch-projects-page">
+        <section className="ch-projects-section">
+          <div className="ch-section-top ch-animate ch-delay-1">
+            <span className="ch-section-number">01</span>
+            <span className="ch-section-line" />
+            <span className="ch-section-category">PORTFOLIO & CASE STUDIES</span>
+          </div>
 
-        <p className="eyebrow">PORTFOLIO</p>
-        <h1>SEO projects and case studies</h1>
+          <div className="ch-animate ch-delay-2" style={{ marginBottom: "25px" }}>
+            <Breadcrumbs
+              items={[
+                { label: "Home", to: "/" },
+                { label: "Projects" }
+              ]}
+            />
+          </div>
 
-        <p className="lead">
-          Explore my SEO workflows and case studies. Replace the starter
-          examples with genuine work and verified results before publishing.
-        </p>
+          <div className="ch-project-heading ch-animate ch-delay-3">
+            <div>
+              <p className="ch-red-label">FEATURED WORKS</p>
+              <h2>
+                SEO projects and <br />
+                <span>case studies.</span>
+              </h2>
+            </div>
+            <p className="ch-lead-text">
+              Explore my SEO workflows and case studies. Replace the starter
+              examples with genuine work and verified results before publishing.
+            </p>
+          </div>
 
-        <div className="grid three">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
+          <div className="ch-project-grid ch-animate ch-delay-4">
+            {projects.map((project, index) => (
+              <div 
+                className="ch-project-item home-reveal home-visible" 
+                style={{ "--card-index": index + 1 }}
+                key={project.slug}
+              >
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
-    </>
+    </div>
   );
 }

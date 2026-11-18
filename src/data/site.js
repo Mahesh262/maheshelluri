@@ -4,6 +4,7 @@ const site = {
   url: "https://maheshelluri-one.vercel.app/",
   email: "maheshilluri262@gmail.com",
   linkedin: "https://www.linkedin.com/in/elluri-mahesh-a39bb7126/",
+  github: "https://github.com/Mahesh262",
 
   description:
     "SEO portfolio featuring technical SEO, keyword research, on-page SEO, local SEO and organic search optimization.",

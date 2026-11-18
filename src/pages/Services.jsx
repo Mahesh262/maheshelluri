@@ -55,85 +55,105 @@ const services = [
 
 export default function Services() {
   return (
-    <>
+    <div className="cinema-home">
       <SEO
         title="SEO Services | Technical, On-Page and Local SEO"
         path="/services"
         description="Explore SEO support including technical audits, keyword research, on-page optimization, local SEO, reporting and content optimization."
       />
 
-      <main id="main" className="services-page">
-        <section className="inner-hero">
-          <div className="container">
+      <main id="main" className="ch-services-page">
+        <section className="ch-expertise-section">
+          <div className="ch-section-top ch-animate ch-delay-1">
+            <span className="ch-section-number">01</span>
+            <span className="ch-section-line" />
+            <span className="ch-section-category">SEO SUPPORT & SERVICES</span>
+          </div>
+
+          <div className="ch-animate ch-delay-2" style={{ marginBottom: "25px" }}>
             <Breadcrumbs
               items={[
                 { label: "Home", to: "/" },
                 { label: "Services" }
               ]}
             />
+          </div>
 
-            <div className="section-heading services-heading">
-              <p className="eyebrow">SEO SUPPORT</p>
-              <h1>
-                Practical SEO services for{" "}
-                <span className="gradient-text">better visibility.</span>
-              </h1>
-              <p>
-                Website analysis, keyword research and actionable
-                optimization focused on your website's goals.
-              </p>
-
-              <div className="actions centered-actions">
-                <Link className="button" to="/contact">
-                  Discuss a project <span aria-hidden="true">↗</span>
-                </Link>
-                <Link className="button outline" to="/projects">
-                  View my projects
-                </Link>
-              </div>
+          <div className="ch-expertise-heading ch-animate ch-delay-3">
+            <div>
+              <p className="ch-red-label">WHAT I OFFER</p>
+              <h2>
+                Practical SEO services for <br />
+                <span>better visibility.</span>
+              </h2>
             </div>
+            <p className="ch-lead-text">
+              Website analysis, keyword research and actionable
+              optimization focused on your website's goals.
+            </p>
+          </div>
 
-            <div className="grid three services-grid">
-              {services.map((service) => (
-                <article className="modern-card service-card" key={service.number}>
-                  <div className="service-card-top">
-                    <span className="service-icon" aria-hidden="true">
-                      {service.icon}
-                    </span>
-                    <span className="service-number">{service.number}</span>
+          <div className="ch-hero-actions ch-animate ch-delay-3" style={{ maxWidth: "1250px", margin: "0 auto 65px" }}>
+            <Link className="ch-button ch-button-primary" to="/contact">
+              Discuss a project <span aria-hidden="true">↗</span>
+            </Link>
+            <Link className="ch-button ch-button-outline" to="/projects">
+              View my projects
+            </Link>
+          </div>
+
+          <div className="ch-expertise-grid ch-animate ch-delay-4">
+            {services.map((service, index) => (
+              <div
+                className="ch-service-item home-reveal home-visible"
+                style={{ "--card-index": index + 1 }}
+                key={service.number}
+              >
+                <div className="ch-expertise-card">
+                  <div className="ch-card-top">
+                    <span className="ch-card-icon">{service.icon}</span>
+                    <span style={{ color: "#777", fontWeight: "800" }}>{service.number}</span>
                   </div>
 
-                  <h2>{service.title}</h2>
-                  <p>{service.description}</p>
+                  <div>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                  </div>
 
-                  <div className="service-tags">
+                  <div className="ch-service-tags">
                     {service.tags.map((tag) => (
                       <span key={tag}>{tag}</span>
                     ))}
                   </div>
-                </article>
-              ))}
-            </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
-        <section className="container section">
-          <div className="services-cta">
-            <div className="cta-orb" aria-hidden="true" />
-            <div className="cta-content">
-              <p className="eyebrow">HAVE AN SEO GOAL?</p>
-              <h2>Let's identify your next SEO opportunity.</h2>
-              <p>
-                Share your website and objectives to start a conversation
-                about the work that may help.
-              </p>
-              <Link className="button cta-button" to="/contact">
+        {/* FINAL CTA SECTION */}
+        <section className="ch-cta-section">
+          <div className="ch-cta-background">
+            <span>GOAL</span>
+          </div>
+          <div className="ch-cta-content">
+            <p className="ch-red-label">HAVE AN SEO GOAL?</p>
+            <h2>
+              Let's identify your <br />
+              <span>next SEO opportunity.</span>
+            </h2>
+            <p>
+              Share your website and objectives to start a conversation
+              about the work that may help.
+            </p>
+            <div className="ch-hero-actions" style={{ marginTop: "35px" }}>
+              <Link className="ch-button ch-button-primary" to="/contact">
                 Contact me <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
         </section>
       </main>
-    </>
+    </div>
   );
 }

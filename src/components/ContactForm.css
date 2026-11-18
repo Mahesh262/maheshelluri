@@ -1,0 +1,187 @@
+/* =====================================
+   CINEMATIC CONTACT FORM STYLING
+===================================== */
+
+.ml-contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* FIELD */
+
+.ml-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+  min-width: 0;
+}
+
+.ml-field label {
+  font-size: 13px;
+  font-weight: 650;
+  color: #f3f3f0;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.ml-field label span:not(.ml-optional) {
+  color: var(--ch-red, #c32626);
+}
+
+.ml-optional {
+  color: #777;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+/* INPUT, SELECT, TEXTAREA */
+
+.ml-field input,
+.ml-field select,
+.ml-field textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  background: #191919;
+  color: #f3f3f0;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-sizing: border-box;
+}
+
+.ml-field textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.ml-field input::placeholder,
+.ml-field textarea::placeholder {
+  color: #666;
+}
+
+.ml-field input:focus,
+.ml-field select:focus,
+.ml-field textarea:focus {
+  border-color: var(--ch-red, #c32626);
+  background: #202020;
+  box-shadow: 0 0 0 3px rgba(195, 38, 38, 0.15);
+}
+
+/* DROPDOWN */
+
+.ml-field select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+.ml-field select option {
+  background: #1b1b1b;
+  color: #f3f3f0;
+  padding: 10px;
+}
+
+/* TWO COLUMN ROW */
+
+.ml-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* SUBMIT BUTTON */
+
+.ml-submit-button {
+  width: 100%;
+  min-height: 54px;
+  padding: 15px 22px;
+  border: 1px solid var(--ch-red, #c32626);
+  border-radius: 12px;
+  background: var(--ch-red, #c32626);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.ml-submit-button:hover:not(:disabled) {
+  background: #f0f0ed;
+  border-color: #f0f0ed;
+  color: #111111;
+  transform: translateY(-3px);
+}
+
+.ml-submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ml-submit-button span:not(.ml-button-spinner) {
+  font-size: 16px;
+}
+
+/* LOADING SPINNER */
+
+.ml-button-spinner {
+  width: 17px;
+  height: 17px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: ml-spin 0.7s linear infinite;
+}
+
+@keyframes ml-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* FORM NOTE */
+
+.ml-form-note {
+  margin: -4px 0 0;
+  color: #777;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+  .ml-contact-form {
+    gap: 18px;
+  }
+
+  .ml-form-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .ml-field input,
+  .ml-field select,
+  .ml-field textarea {
+    min-height: 46px;
+    font-size: 13px;
+  }
+
+  .ml-submit-button {
+    min-height: 48px;
+    font-size: 11px;
+  }
+}

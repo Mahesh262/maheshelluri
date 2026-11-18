@@ -1,0 +1,54 @@
+/* =====================================================
+   CINEMATIC PROJECTS PAGE STYLING
+===================================================== */
+
+.ch-projects-page {
+  background: var(--ch-bg, #101010);
+  color: var(--ch-white, #f3f3f0);
+  min-height: 80vh;
+  padding-bottom: 100px;
+}
+
+.ch-projects-section {
+  padding: 60px 8% 120px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ch-lead-text {
+  max-width: 420px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--ch-muted, #999);
+  margin: 0;
+}
+
+/* Ensure Breadcrumbs adapt to dark cinema theme */
+.ch-projects-page .crumb ol {
+  color: var(--ch-muted, #999);
+}
+
+.ch-projects-page .crumb li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ch-projects-page .crumb li a:hover {
+  color: var(--ch-red, #c32626);
+}
+
+.ch-projects-page .crumb li span[aria-current="page"] {
+  color: var(--ch-white, #f3f3f0);
+}
+
+.ch-projects-page .crumb li:not(:last-child)::after {
+  color: #555;
+}
+
+/* Responsive alignment adjustments */
+@media (max-width: 900px) {
+  .ch-projects-section {
+    padding: 40px 6% 80px;
+  }
+}

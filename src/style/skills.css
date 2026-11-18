@@ -1,0 +1,102 @@
+/* =====================================================
+   CINEMATIC SKILLS PAGE STYLING
+===================================================== */
+
+.ch-skills-page {
+  background: var(--ch-bg, #101010);
+  color: var(--ch-white, #f3f3f0);
+}
+
+.ch-lead-text {
+  max-width: 380px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--ch-muted, #999);
+  margin: 0;
+}
+
+/* Compatibility for existing SkillCard component inside dark cinematic theme */
+.ch-skills-page .card,
+.ch-skills-page .skill-card {
+  background: #121212 !important;
+  border: 1px solid var(--ch-border, rgba(255,255,255,.13)) !important;
+  color: #fff !important;
+  height: 100%;
+}
+
+.ch-skills-page .card h2,
+.ch-skills-page .card h3,
+.ch-skills-page .skill-card h3 {
+  color: #fff !important;
+}
+
+.ch-skills-page .card p,
+.ch-skills-page .skill-card p {
+  color: #aaa !important;
+}
+
+/* TOOLS CLOUD PILLS */
+.ch-tools-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ch-tool-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  background: #191919;
+  color: #f3f3f0;
+  font-size: 13px;
+  font-weight: 650;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.ch-tool-pill:hover {
+  transform: translateY(-4px);
+  border-color: var(--ch-red, #c32626);
+  background: #222;
+}
+
+.ch-tool-dot {
+  color: var(--ch-red, #c32626);
+  font-size: 10px;
+}
+
+/* Breadcrumbs adjustment for dark theme */
+.ch-skills-page .crumb ol {
+  color: #888;
+}
+
+.ch-skills-page .crumb li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.ch-skills-page .crumb li a:hover {
+  color: var(--ch-red, #c32626);
+}
+
+.ch-skills-page .crumb li span[aria-current="page"] {
+  color: #fff;
+}
+
+.ch-skills-page .crumb li:not(:last-child)::after {
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .ch-tools-cloud {
+    gap: 8px;
+  }
+  
+  .ch-tool-pill {
+    padding: 11px 16px;
+    font-size: 12px;
+  }
+}

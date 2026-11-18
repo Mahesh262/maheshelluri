@@ -1,0 +1,216 @@
+/* =====================================================
+   CINEMATIC SEAMLESS PAPER-CUT CONTACT STYLING
+===================================================== */
+
+.ch-contact-page {
+  background: var(--ch-bg, #101010);
+  color: var(--ch-white, #f3f3f0);
+  padding-bottom: 100px;
+}
+
+.ch-lead-text {
+  max-width: 420px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--ch-muted, #999);
+  margin: 0;
+}
+
+/* MAIN SPLIT CONTAINER */
+.ch-contact-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 1250px;
+  margin: 50px auto 0;
+  border-radius: 32px;
+  overflow: visible;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+  background: #141716;
+}
+
+/* LEFT INFO CARD */
+.ch-contact-info-card {
+  position: relative;
+  z-index: 2;
+  padding: 50px;
+  background: linear-gradient(145deg, #18221d, #0f1613);
+  color: #f3f3f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
+}
+
+.ch-contact-info-card h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  color: #fff;
+  margin: 10px 0 0;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.ch-contact-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ch-contact-info-label {
+  color: #799a7b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ch-contact-link {
+  color: #f3f3f0;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  overflow-wrap: anywhere;
+}
+
+.ch-contact-link:hover {
+  color: #a8caa9;
+}
+
+.ch-contact-info-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #799a7b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* PURE CSS CINEMATIC PAPER-CUT OVERLAPPING WAVE DIVIDER */
+.ch-paper-cut-divider {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 85%;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(20,23,22,0) 0%, rgba(26,34,30,0.95) 50%, #151817 100%);
+  border-radius: 50% / 20%;
+  box-shadow: inset 5px 0 15px rgba(0, 0, 0, 0.8), -15px 0 35px rgba(0, 0, 0, 0.85);
+}
+
+/* RIGHT FORM CARD */
+.ch-contact-form-card {
+  position: relative;
+  z-index: 2;
+  padding: 50px;
+  background: #151817;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
+}
+
+.ch-contact-form-card .contact-form-heading {
+  margin-bottom: 25px;
+}
+
+.ch-contact-form-card .contact-form-heading h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  margin: 6px 0;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+/* FORM FIELD STYLING ADJUSTMENTS */
+.ch-contact-form-card .ml-field input,
+.ch-contact-form-card .ml-field select,
+.ch-contact-form-card .ml-field textarea {
+  background: #101312 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #f3f3f0 !important;
+  border-radius: 12px !important;
+}
+
+.ch-contact-form-card .ml-field input:focus,
+.ch-contact-form-card .ml-field select:focus,
+.ch-contact-form-card .ml-field textarea:focus {
+  border-color: #58745D !important;
+  box-shadow: 0 0 0 3px rgba(88, 116, 93, 0.25) !important;
+}
+
+.ch-contact-form-card .ml-field label {
+  color: #b2c4b3 !important;
+}
+
+.ch-contact-form-card .ml-submit-button {
+  background: #233b30 !important;
+  border: 1px solid #335445 !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.ch-contact-form-card .ml-submit-button:hover:not(:disabled) {
+  background: #2b493c !important;
+  transform: translateY(-2px);
+}
+
+/* Breadcrumbs adjustment */
+.ch-contact-page .crumb ol {
+  color: #888;
+}
+
+.ch-contact-page .crumb li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.ch-contact-page .crumb li a:hover {
+  color: var(--ch-red, #c32626);
+}
+
+.ch-contact-page .crumb li span[aria-current="page"] {
+  color: #fff;
+}
+
+.ch-contact-page .crumb li:not(:last-child)::after {
+  color: #555;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 950px) {
+  .ch-contact-layout {
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+  }
+  
+  .ch-paper-cut-divider {
+    display: none;
+  }
+  
+  .ch-contact-info-card,
+  .ch-contact-form-card {
+    padding: 30px;
+    border-radius: 0;
+  }
+  
+  .ch-contact-info-card {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .ch-contact-form-card {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}

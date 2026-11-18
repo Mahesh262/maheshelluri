@@ -1,0 +1,46 @@
+/* =========================================
+   BREADCRUMBS COMPONENT STYLES
+   ========================================= */
+
+.crumb {
+  margin-bottom: 28px;
+}
+
+.crumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #7b8aa3;
+  font-size: 0.85rem;
+}
+
+.crumb li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.crumb li a {
+  color: #5c75a1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.crumb li a:hover {
+  color: var(--portfolio-blue, #2463f5);
+}
+
+.crumb li span[aria-current="page"] {
+  color: var(--portfolio-navy, #10234b);
+  font-weight: 600;
+}
+
+.crumb li:not(:last-child)::after {
+  content: "/";
+  margin-left: 10px;
+  color: #a1b2d0;
+  font-weight: 400;
+}

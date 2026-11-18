@@ -1,7 +1,7 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
+import "./ContactForm.css"
 
 export default function ContactForm({ initialService = "SEO" }) {
   const [name, setName] = useState("");

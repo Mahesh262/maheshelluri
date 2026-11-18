@@ -8,14 +8,16 @@ import skills from "../data/skills.js";
 import site from "../data/site.js";
 import ResumeButton from "../components/ResumeButton.jsx";
 
-const skillIcons = ["⚙", "⌕", "▤", "⌖", "↗", "✦"];
+const skillIcons = ["⌘", "⌕", "▤", "⌖", "↗", "✦"];
 
 export default function Home() {
   useEffect(() => {
-    const elements = document.querySelectorAll(".reveal");
+    const elements = document.querySelectorAll(".home-reveal");
 
     if (!("IntersectionObserver" in window)) {
-      elements.forEach((element) => element.classList.add("is-visible"));
+      elements.forEach((element) =>
+        element.classList.add("home-visible")
+      );
       return;
     }
 
@@ -23,12 +25,12 @@ export default function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            entry.target.classList.add("home-visible");
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
 
     elements.forEach((element) => observer.observe(element));
@@ -54,223 +56,261 @@ export default function Home() {
         jsonLd={schema}
       />
 
-      <main id="main">
-        <section className="hero hero-modern">
-          <div className="hero-orb hero-orb-one" aria-hidden="true" />
-          <div className="hero-orb hero-orb-two" aria-hidden="true" />
+      <main id="main" className="cinema-home">
 
-          <div className="container hero-layout">
-            <div className="hero-copy">
-              <p className="eyebrow hero-badge">
-                SEO EXECUTIVE <span>•</span> DIGITAL MARKETING
+        {/* ==================================
+            HERO
+        ================================== */}
+
+        <section className="ch-hero">
+
+          <div className="ch-grid-bg" aria-hidden="true" />
+          <div className="ch-red-glow" aria-hidden="true" />
+
+          <div className="ch-hero-inner">
+
+            <div className="ch-hero-copy">
+
+              <div className="ch-overline ch-animate ch-delay-1">
+                <span className="ch-status-dot" />
+                AVAILABLE FOR OPPORTUNITIES
+              </div>
+
+              <p className="ch-kicker ch-animate ch-delay-2">
+                SEO SPECIALIST / DIGITAL STRATEGIST
               </p>
 
-            <h1>
-  Smarter SEO.
-  <br />
-  <span className="gradient-text">Stronger Growth.</span>
-</h1>
+              <h1 className="ch-main-title ch-animate ch-delay-3">
+                <span>MAHESH</span>
+                <span className="ch-title-outline">ELLURI<span className="ch-red-dot">.</span></span>
+              </h1>
 
-              <p className="lead">
-  I'm Mahesh Elluri, an SEO professional with 2.5+
-  years of experience in improving website visibility
-  through technical SEO, keyword research, content
-  optimization, on-page SEO and organic growth strategies.
-</p>
+              <div className="ch-hero-description ch-animate ch-delay-4">
+                <span className="ch-description-line" />
+                <p>
+                  Turning search visibility into meaningful
+                  <strong> organic growth.</strong>
+                  <br />
+                  Building smarter SEO strategies through
+                  data, creativity and technical precision.
+                </p>
+              </div>
 
-              <div className="actions">
-                <Link className="button button-primary" to="/projects">
-                  Explore Projects <span aria-hidden="true">→</span>
+              <div className="ch-hero-actions ch-animate ch-delay-5">
+                <Link to="/projects" className="ch-button ch-button-primary">
+                  EXPLORE MY WORK <span>↗</span>
                 </Link>
-                <Link className="button button-outline" to="/contact">
-                  Contact Me <span aria-hidden="true">↗</span>
+
+                <Link to="/contact" className="ch-button ch-button-outline">
+                  LET'S TALK <span>→</span>
                 </Link>
+              </div>
+
+              <div className="ch-resume ch-animate ch-delay-5">
                 <ResumeButton />
               </div>
 
-              <div className="hero-benefits">
-                <span><b>⌕</b> Better Rankings</span>
-                <span><b>↗</b> More Traffic</span>
-                <span><b>☆</b> Real Growth</span>
-              </div>
             </div>
 
-            <div className="hero-visual" aria-label="Illustrative SEO analytics dashboard">
-              <div className="floating-icon google-icon" aria-hidden="true">G</div>
-              <div className="floating-icon chart-icon" aria-hidden="true">▥</div>
-              <div className="floating-icon search-icon" aria-hidden="true">⌕</div>
-              <div className="floating-icon location-icon" aria-hidden="true">●</div>
+            {/* ABSTRACT VISUAL */}
 
-              <div className="analytics-window">
-                <div className="window-top">
-                  <span /><span /><span />
-                  <small>SEO PERFORMANCE</small>
-                </div>
+            <div className="ch-hero-art" aria-hidden="true">
 
-                <div className="analytics-content">
-                  <div className="traffic-heading">
-                    <div>
-                      <small>Organic Traffic</small>
-                      <h3>Search visibility</h3>
-                    </div>
-                    <span className="growth-chip">SEO</span>
-                  </div>
+              <div className="ch-art-number">01 / 04</div>
 
-                  <div className="chart-area">
-                    <div className="chart-y-labels">
-                      <span>High</span>
-                      <span>Medium</span>
-                      <span>Low</span>
-                    </div>
+              <div className="ch-art-circle ch-circle-one" />
+              <div className="ch-art-circle ch-circle-two" />
+              <div className="ch-art-circle ch-circle-three" />
 
-                    <svg
-                      className="traffic-chart"
-                      viewBox="0 0 360 125"
-                      role="img"
-                      aria-label="Illustrative upward organic traffic trend"
-                    >
-                      <defs>
-                        <linearGradient id="trafficFill" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#3985ff" stopOpacity=".3" />
-                          <stop offset="100%" stopColor="#3985ff" stopOpacity="0" />
-                        </linearGradient>
-                      </defs>
-                      {[25, 60, 95].map((y) => (
-                        <line
-                          key={y}
-                          x1="0"
-                          y1={y}
-                          x2="360"
-                          y2={y}
-                          stroke="#e5edfa"
-                          strokeDasharray="4 5"
-                        />
-                      ))}
-                      <path
-                        d="M0 104 L30 88 L60 95 L88 68 L116 77 L145 55 L172 65 L204 42 L230 51 L260 29 L289 37 L320 14 L360 8 L360 125 L0 125 Z"
-                        fill="url(#trafficFill)"
-                      />
-                      <path
-                        d="M0 104 L30 88 L60 95 L88 68 L116 77 L145 55 L172 65 L204 42 L230 51 L260 29 L289 37 L320 14 L360 8"
-                        fill="none"
-                        stroke="#3478f6"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <circle cx="360" cy="8" r="5" fill="#3478f6" />
-                    </svg>
-                  </div>
-
-                  <div className="dashboard-bottom">
-                    <div>
-                      <span className="dashboard-icon blue">⌕</span>
-                      <div><small>Keyword research</small><b>Search intent</b></div>
-                    </div>
-                    <div>
-                      <span className="dashboard-icon purple">✦</span>
-                      <div><small>Content strategy</small><b>On-page SEO</b></div>
-                    </div>
-                    <div>
-                      <span className="dashboard-icon green">⌖</span>
-                      <div><small>Local SEO</small><b>Local visibility</b></div>
-                    </div>
-                    <div>
-                      <span className="dashboard-icon orange">↗</span>
-                      <div><small>Reporting</small><b>Measure results</b></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="floating-note">
-                <span className="note-check">✓</span>
-                <div>
-                  <strong>SEO strategy</strong>
-                  <small>Research · Optimize · Measure</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="skills-section">
-          <div className="container skills-layout">
-            <div className="skills-intro reveal">
-              <p className="eyebrow section-badge">MY SKILLS</p>
-              <h2>Core SEO skills</h2>
-              <p>
-                Practical skills across website health, content relevance,
-                local search and measurement.
-              </p>
-              <Link className="link" to="/skills">
-                View all skills <span>→</span>
-              </Link>
-            </div>
-
-            <div className="skills-grid">
-              {skills.slice(0, 6).map((skill, index) => (
-                <article
-                  className={`skill-card reveal skill-card-${index + 1}`}
-                  key={skill.name}
-                  style={{ "--reveal-delay": `${index * 80}ms` }}
-                >
-                  <span className={`skill-icon skill-icon-${index + 1}`} aria-hidden="true">
-                    {skillIcons[index % skillIcons.length]}
+              <div className="ch-diagonal-panel">
+                <div className="ch-panel-inner">
+                  <span className="ch-panel-symbol">E</span>
+                  <span className="ch-panel-caption">
+                    SEARCH / STRATEGY / GROWTH
                   </span>
-                  <div>
-                    <h3>{skill.name}</h3>
-                    <p>{skill.description}</p>
-                  </div>
-                </article>
-              ))}
+                </div>
+              </div>
+
+              <div className="ch-art-cross ch-cross-one" />
+              <div className="ch-art-cross ch-cross-two" />
+
+              <div className="ch-art-vertical-text">
+                DIGITAL GROWTH / EST. 2026
+              </div>
+
+              <div className="ch-art-bottom">
+                <span>THINK</span>
+                <span>OPTIMIZE</span>
+                <span>GROW</span>
+              </div>
+
             </div>
+
           </div>
+
+          <div className="ch-hero-footer">
+            <span>PORTFOLIO / 2026</span>
+            <span>SCROLL TO EXPLORE <span className="ch-scroll-arrow">↓</span></span>
+            <span>01 — INTRODUCTION</span>
+          </div>
+
+          <div className="ch-hero-side-label">INDEPENDENT SEO PROFESSIONAL</div>
+
         </section>
 
-        <section className="projects-section">
-          <div className="container">
-            <div className="section-heading reveal">
-              <div>
-                <p className="eyebrow">FEATURED PROJECTS</p>
-                <h2>Selected projects</h2>
-                <p>SEO work, strategies and practical projects.</p>
-              </div>
-              <Link className="link desktop-project-link" to="/projects">
-                View all projects <span>→</span>
+        {/* ==================================
+            INTRO / ABOUT
+        ================================== */}
+
+        <section className="ch-intro-section">
+
+          <div className="ch-section-top home-reveal">
+            <span className="ch-section-number">01 / WHO I AM</span>
+            <span className="ch-section-line" />
+            <span className="ch-section-category">THE INTRODUCTION</span>
+          </div>
+
+          <div className="ch-intro-grid">
+
+            <div className="ch-intro-heading home-reveal">
+              <p className="ch-red-label">ABOUT ME</p>
+
+              <h2>
+                NOT JUST
+                <br />
+                <span>RANKINGS.</span>
+                <br />
+                REAL IMPACT.
+              </h2>
+            </div>
+
+            <div className="ch-intro-content home-reveal">
+              <p className="ch-intro-lead">
+                I believe successful SEO is about more than
+                getting websites to rank. It's about making
+                businesses discoverable, relevant and valuable.
+              </p>
+
+              <p>
+                I'm Mahesh Elluri, an SEO professional with
+                2.5+ years of experience in technical SEO,
+                keyword research, on-page optimization,
+                content strategy and organic growth.
+              </p>
+
+              <Link to="/about" className="ch-text-link">
+                DISCOVER MY JOURNEY <span>↗</span>
               </Link>
             </div>
 
-            <div className="grid three project-grid">
-              {projects.slice(0, 3).map((project, index) => (
-                <div
-                  className="reveal project-reveal"
-                  key={project.slug}
-                  style={{ "--reveal-delay": `${index * 100}ms` }}
-                >
-                  <ProjectCard project={project} />
-                </div>
-              ))}
-            </div>
-
-            <Link className="link mobile-project-link" to="/projects">
-              View all projects →
-            </Link>
           </div>
-        </section>
 
-        <section className="closing-section">
-          <div className="container closing-card reveal">
+          <div className="ch-stats home-reveal">
             <div>
-              <p className="eyebrow">LET'S CONNECT</p>
-              <h2>Have an SEO project in mind?</h2>
-              <p>Let's discuss website visibility, technical SEO and content opportunities.</p>
+              <strong>2.5<span>+</span></strong>
+              <small>YEARS EXPERIENCE</small>
             </div>
-            <Link className="button button-primary" to="/contact">
-              Get in touch <span>→</span>
+            <div>
+              <strong>SEO</strong>
+              <small>CORE SPECIALIZATION</small>
+            </div>
+            <div>
+              <strong>360°</strong>
+              <small>GROWTH APPROACH</small>
+            </div>
+            <div>
+              <strong>∞</strong>
+              <small>LEARNING MINDSET</small>
+            </div>
+          </div>
+
+        </section>
+
+        {/* ==================================
+            EXPERTISE
+        ================================== */}
+
+      
+
+        {/* ==================================
+            PROJECTS
+        ================================== */}
+
+        <section className="ch-projects-section">
+
+          <div className="ch-section-top home-reveal">
+            <span className="ch-section-number">03 / SELECTED WORK</span>
+            <span className="ch-section-line" />
+            <span className="ch-section-category">PROJECTS</span>
+          </div>
+
+          <div className="ch-project-heading home-reveal">
+            <div>
+              <p className="ch-red-label">THE PORTFOLIO</p>
+              <h2>
+                WORK THAT
+                <br />
+                <span>SPEAKS.</span>
+              </h2>
+            </div>
+
+            <Link to="/projects" className="ch-button ch-button-outline">
+              ALL PROJECTS <span>↗</span>
             </Link>
           </div>
+
+          <div className="ch-project-grid">
+
+            {projects.slice(0, 3).map((project, index) => (
+              <div
+                className="ch-project-item home-reveal"
+                key={project.slug}
+                style={{ "--card-index": index }}
+              >
+                <ProjectCard project={project} />
+              </div>
+            ))}
+
+          </div>
+
         </section>
+
+        {/* ==================================
+            CLOSING CTA
+        ================================== */}
+
+        <section className="ch-cta-section">
+
+          <div className="ch-cta-background" aria-hidden="true">
+            <span>GROW</span>
+          </div>
+
+          <div className="ch-cta-content home-reveal">
+            <p className="ch-red-label">04 / THE NEXT MOVE</p>
+
+            <h2>
+              LET'S MAKE
+              <br />
+              <span>IT HAPPEN.</span>
+            </h2>
+
+            <p>
+              Have a website that needs better visibility?
+              Let's turn opportunities into measurable growth.
+            </p>
+
+            <Link to="/contact" className="ch-button ch-button-primary">
+              START A CONVERSATION <span>↗</span>
+            </Link>
+          </div>
+
+          <div className="ch-cta-bottom">
+            <span>YOUR NEXT GROWTH STORY STARTS HERE.</span>
+            <span>MAHESH ELLURI © 2026</span>
+          </div>
+
+        </section>
+
       </main>
     </>
   );

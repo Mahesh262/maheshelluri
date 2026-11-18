@@ -36,7 +36,7 @@ export default function About() {
   };
 
   return (
-    <>
+    <div className="cinema-home">
       <SEO
         title={`About ${site.name} | SEO Experience`}
         path="/about"
@@ -44,110 +44,132 @@ export default function About() {
         jsonLd={schema}
       />
 
-      <main id="main" className="about-page">
-        <section className="inner-hero">
-          <div className="container">
+      <main id="main" className="ch-about-page">
+        {/* INTRO SECTION */}
+        <section className="ch-intro-section">
+          <div className="ch-section-top ch-animate ch-delay-1">
+            <span className="ch-section-number">01</span>
+            <span className="ch-section-line" />
+            <span className="ch-section-category">ABOUT ME</span>
+          </div>
+
+          <div className="ch-animate ch-delay-2" style={{ marginBottom: "25px" }}>
             <Breadcrumbs
               items={[
                 { label: "Home", to: "/" },
                 { label: "About" }
               ]}
             />
+          </div>
 
-            <div className="about-intro">
-              <div className="about-copy">
-                <p className="eyebrow">
-                  <span className="eyebrow-dot" />
-                  A LITTLE ABOUT ME
-                </p>
+          <div className="ch-about-intro-grid">
+            <div className="ch-intro-copy ch-animate ch-delay-3">
+              <p className="ch-red-label">MAHESH ELLURI</p>
+              <h1 className="ch-about-title">
+                SEO Specialist & <br />
+                <span>Digital Marketer</span>
+              </h1>
+              <p className="ch-intro-lead">
+                I am Mahesh Elluri, an SEO Specialist with 2.5+ years of
+                digital marketing experience, specializing in technical SEO,
+                keyword research, on-page optimization, content strategy
+                and organic search growth.
+              </p>
 
-                <h1>
-  Mahesh Elluri –{" "}
-  <span className="gradient-text">
-    SEO Specialist & Digital Marketer
-  </span>
-</h1>
-                <p className="lead">
-  I am Mahesh Elluri, an SEO Specialist with 2.5+ years of
-  digital marketing experience, specializing in technical SEO,
-  keyword research, on-page optimization, content strategy
-  and organic search growth.
-</p>
-
-                <div className="actions">
-                  <ResumeButton />
-                  <Link className="button outline" to="/contact">
-                    Let's connect <span aria-hidden="true">↗</span>
-                  </Link>
-                </div>
+              <div className="ch-hero-actions">
+                <ResumeButton className="ch-button ch-button-primary" />
+                <Link className="ch-button ch-button-outline" to="/contact">
+                  Let's connect <span aria-hidden="true">↗</span>
+                </Link>
               </div>
-
-              <aside className="about-highlight">
-                <span className="highlight-icon" aria-hidden="true">
-                  ✦
-                </span>
-                <p className="eyebrow">MY APPROACH</p>
-                <h2>Research. Optimize. Measure.</h2>
-                <p>
-                  Understand the problem, prioritize useful improvements,
-                  and measure what changes over time.
-                </p>
-
-                <div className="highlight-line">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-                <small>Focused on sustainable organic visibility</small>
-              </aside>
             </div>
+
+            <aside className="ch-about-highlight ch-animate ch-delay-4">
+              <span className="ch-highlight-icon" aria-hidden="true">✦</span>
+              <p className="ch-red-label">MY APPROACH</p>
+              <h2>Research. Optimize. Measure.</h2>
+              <p>
+                Understand the problem, prioritize useful improvements,
+                and measure what changes over time.
+              </p>
+              <div className="ch-highlight-line">
+                <span />
+                <span />
+                <span />
+              </div>
+              <small>Focused on sustainable organic visibility</small>
+            </aside>
           </div>
         </section>
 
-        <section className="section about-strengths">
-          <div className="container">
-            <div className="section-heading">
-              <p className="eyebrow">HOW I WORK</p>
-              <h2>SEO with a clear process</h2>
-              <p>
-                Practical work built around website quality, search intent
-                and meaningful performance measurement.
-              </p>
-            </div>
+        {/* STRENGTHS SECTION */}
+        <section className="ch-expertise-section">
+          <div className="ch-section-top">
+            <span className="ch-section-number">02</span>
+            <span className="ch-section-line" />
+            <span className="ch-section-category">PROCESS & EXPERTISE</span>
+          </div>
 
-            <div className="grid three">
-              {strengths.map((item) => (
-                <article className="modern-card reveal-card" key={item.title}>
-                  <span className="number-icon">{item.icon}</span>
+          <div className="ch-expertise-heading">
+            <div>
+              <p className="ch-red-label">HOW I WORK</p>
+              <h2>SEO with a <br /><span>clear process</span></h2>
+            </div>
+            <p>
+              Practical work built around website quality, search intent
+              and meaningful performance measurement.
+            </p>
+          </div>
+
+          <div className="ch-expertise-grid">
+            {strengths.map((item, index) => (
+              <div 
+                className="ch-expertise-card home-reveal home-visible" 
+                style={{ "--card-index": index + 1 }}
+                key={item.title}
+              >
+                <div className="ch-card-top">
+                  <span>{item.icon}</span>
+                  <span className="ch-card-icon">✦</span>
+                </div>
+                <div>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                </article>
-              ))}
-            </div>
+                </div>
+                <span className="ch-card-arrow">↗</span>
+              </div>
+            ))}
           </div>
         </section>
 
-        <section className="section about-details">
-          <div className="container details-layout">
-            <div>
-              <p className="eyebrow">MY SEO WORKFLOW</p>
-              <h2>From website analysis to actionable improvements</h2>
-              <p>
+        {/* WORKFLOW SECTION */}
+        <section className="ch-intro-section" style={{ background: "#131313" }}>
+          <div className="ch-section-top">
+            <span className="ch-section-number">03</span>
+            <span className="ch-section-line" />
+            <span className="ch-section-category">SEO WORKFLOW</span>
+          </div>
+
+          <div className="ch-intro-grid">
+            <div className="ch-intro-heading">
+              <p className="ch-red-label">STEP-BY-STEP</p>
+              <h2>Actionable <br /><span>improvements</span></h2>
+              <p className="ch-intro-lead" style={{ marginTop: "20px" }}>
                 I review website health, research relevant queries, identify
                 optimization opportunities and use performance data to guide
                 the next steps.
               </p>
             </div>
 
-            <div className="workflow-list">
+            <div className="ch-workflow-list">
               {[
                 ["01", "Audit", "Review technical and on-page issues."],
                 ["02", "Prioritize", "Focus on relevant, achievable improvements."],
                 ["03", "Optimize", "Improve content, links and search relevance."],
                 ["04", "Measure", "Track results and identify next actions."]
               ].map(([number, title, description]) => (
-                <div className="workflow-item" key={number}>
-                  <span>{number}</span>
+                <div className="ch-workflow-item" key={number}>
+                  <span className="ch-workflow-num">{number}</span>
                   <div>
                     <h3>{title}</h3>
                     <p>{description}</p>
@@ -158,25 +180,29 @@ export default function About() {
           </div>
         </section>
 
-        <section className="container section">
-          <div className="resume-cta">
-            <div>
-              <p className="eyebrow">LET'S CONNECT</p>
-              <h2>Want to know more about my experience?</h2>
-              <p>
-                View my resume or get in touch to discuss SEO opportunities.
-              </p>
-            </div>
-
-            <div className="actions">
-              <ResumeButton />
-              <Link className="button outline" to="/contact">
-                Contact me
+        {/* FINAL CTA SECTION */}
+        <section className="ch-cta-section">
+          <div className="ch-cta-background">
+            <span>HIRE</span>
+          </div>
+          <div className="ch-cta-content">
+            <p className="ch-red-label">LET'S CONNECT</p>
+            <h2>
+              Want to know more <br />
+              <span>about my experience?</span>
+            </h2>
+            <p>
+              View my resume or get in touch to discuss SEO opportunities.
+            </p>
+            <div className="ch-hero-actions" style={{ marginTop: "35px" }}>
+              <ResumeButton className="ch-button ch-button-primary" />
+              <Link className="ch-button ch-button-outline" to="/contact">
+                Contact me <span aria-hidden="true">↗</span>
               </Link>
             </div>
           </div>
         </section>
       </main>
-    </>
+    </div>
   );
 }

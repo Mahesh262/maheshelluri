@@ -1,0 +1,99 @@
+/* CINEMATIC FOOTER */
+
+.cinema-footer {
+  background: #101112;
+  color: #fff;
+  padding: 75px 5% 20px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.cinema-footer-main {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding-bottom: 65px;
+}
+
+.cinema-footer-brand > span {
+  color: #b51f1f;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.cinema-footer-brand h2 {
+  color: #fff;
+  font-size: clamp(30px, 5vw, 55px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin: 20px 0;
+}
+
+.cinema-footer-brand > a {
+  display: inline-block;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-bottom: 1px solid #b51f1f;
+  padding-bottom: 8px;
+  transition: color .25s ease;
+}
+
+.cinema-footer-brand > a:hover {
+  color: #d22c2c;
+}
+
+.cinema-footer-links {
+  display: flex;
+  gap: 90px;
+}
+
+.cinema-footer-links > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.cinema-footer-label {
+  color: #b51f1f;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.cinema-footer-links a {
+  color: #aaa;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.cinema-footer-links a:hover {
+  color: #fff;
+}
+
+.cinema-footer-bottom {
+  max-width: 1300px;
+  margin: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.cinema-footer-bottom p,
+.cinema-footer-bottom span,
+.cinema-footer-bottom a {
+  color: #858585;
+  font-size: 10px;
+  letter-spacing: .7px;
+}
+
+.cinema-footer-bottom a {
+  text-decoration: none;
+}
