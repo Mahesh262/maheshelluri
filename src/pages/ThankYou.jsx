@@ -18,7 +18,7 @@ export default function ThankYou() {
     <>
       <SEO
         title="Thank You | Message Sent"
-        path="/thank-system"
+        path="/thank-you"
         description="Thank you for reaching out. Your message has been received successfully."
       />
 
