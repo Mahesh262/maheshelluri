@@ -34,6 +34,10 @@ export default function ContactForm({ initialService = "SEO" }) {
         ]);
 
       if (error) throw error;
+      
+      if (window.fbq) {
+  window.fbq('track', 'Lead');
+}
 
       navigate("/thank-you", {
         state: { submitted: true },
