@@ -157,6 +157,7 @@ export default function ContactForm({ initialService = "SEO" }) {
             onChange={(event) => setService(event.target.value)}
           >
             <option value="SEO">SEO & Organic Growth</option>
+            <option value="Local Seo">Local SEO </option>
             <option value="Google Ads">Google Ads</option>
             <option value="Meta Ads">Meta Ads</option>
             <option value="All Services">Full Digital Marketing</option>
