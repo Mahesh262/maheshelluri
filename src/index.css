@@ -12,6 +12,7 @@
 @import './style/skills.css';
 @import './style/services.css';
 @import './style/contact-main.css';
+@import './style/PageLoader.css';
 
 :root {
   font-family: 'Inter', sans-serif;

@@ -9,6 +9,7 @@ import MobileExperience from "./mobile/MobileExperience.jsx";
 import { pageRoutes } from "./data/routeConfig.js";
 
 import "./mobile/bruno-mobile.css";
+import PageLoader from "./components/pageloader.jsx";
 
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail.jsx"));
 const NotFound = lazy(() => import("./pages/NotFound.jsx"));
@@ -23,7 +24,7 @@ function DesktopSite() {
       <Suspense
         fallback={
           <div className="page-loading" role="status">
-            Loading page...
+            <PageLoader/>
           </div>
         }
       >
