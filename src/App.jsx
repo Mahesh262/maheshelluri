@@ -9,7 +9,7 @@ import MobileExperience from "./mobile/MobileExperience.jsx";
 import { pageRoutes } from "./data/routeConfig.js";
 
 import "./mobile/bruno-mobile.css";
-import PageLoader from "./components/pageloader.jsx";
+import PageLoader from './components/PageLoader.jsx';
 
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail.jsx"));
 const NotFound = lazy(() => import("./pages/NotFound.jsx"));
